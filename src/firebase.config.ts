@@ -81,8 +81,7 @@ export function getFirebase() {
 // ---- Domain allowlist (client-side context guard) -------------------------
 
 /**
- * Domains this build expects to run auth on. This is a LOCAL guard only —
- * Firebase still enforces its own Authorized Domains list server-side.
+ * Domains this build expects to run auth on.
  */
 export const ALLOWED_AUTH_DOMAINS = [
   "preview--quick-link-prosper.lovable.app",
@@ -95,7 +94,8 @@ export function isAllowedAuthDomain(host = typeof window !== "undefined" ? windo
   return (
     ALLOWED_AUTH_DOMAINS.includes(host) ||
     host.endsWith(".lovable.app") ||
-    host.endsWith(".lovableproject.com")
+    host.endsWith(".lovableproject.com") ||
+    host.endsWith(".vercel.app")
   );
 }
 
@@ -223,4 +223,4 @@ export async function mirrorPayoutReject(id: string) {
     status: "Rejected",
     reviewedAt: serverTimestamp(),
   });
-}
+               }
