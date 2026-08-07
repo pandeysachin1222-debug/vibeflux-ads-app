@@ -1,12 +1,16 @@
-// @lovable.dev/vite-tanstack-config includes:
-// tanstackStart, viteReact, tailwindcss, tsConfigPaths, nitro, componentTagger, etc.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
   vite: {
+    plugins: [
+      tsconfigPaths({
+        ignoreConfigErrors: true,
+      }),
+    ],
     resolve: {
       alias: {
         "@": "/src",
@@ -17,3 +21,4 @@ export default defineConfig({
     },
   },
 });
+
