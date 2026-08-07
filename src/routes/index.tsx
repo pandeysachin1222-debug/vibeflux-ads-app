@@ -1,4 +1,4 @@
-{ createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import{ createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
 export type PayMethod = "upi" | "bank";
 // Extended SiteKind: 4 segmented verticals + legacy values for backwards-compatibility.
